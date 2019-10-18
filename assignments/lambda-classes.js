@@ -6,7 +6,7 @@ class Person {
 		this.age = attrib.age
 	}
 	speak() {
-		console.log(`Hello my name is ${this.name}, I am from ${this.location}.`);
+		return `Hello my name is ${this.name}, I am from ${this.location}.`;
 	}
 }
 class Instructor extends Person {
@@ -21,7 +21,7 @@ class Instructor extends Person {
 		return `Today we are learning about ${subject}.`;
 	}
 	grade( student,subject) {
-		return (`${student.name} receives a perfect score on ${subject}.`);
+		return `${student.name} receives a perfect score on ${subject}.`;
 	
 	}
 }
@@ -137,7 +137,7 @@ console.log(personOne.name);
 console.log(personOne.speak());
 console.log(instructorOne.demo('JAVA'));
 console.log(instructorOne.grade(studentTwo, 'Python'));
-console.log(studentTwo.listsSubjects());
+// console.log(studentTwo.listsSubjects());
 console.log(studentOne.PRAssignment('HTML'));
 console.log(studentOne.sprintChallenge('JavaScript'))
 console.log(projManagerOne.standUp('channel'))
