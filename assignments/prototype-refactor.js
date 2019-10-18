@@ -27,8 +27,8 @@ Prototype Refactor
 class GameObject {
 	constructor(attrib) {
 		this.createdAt = attrib.createdAt,
-			this.name = attrib.name,
-			this.dimensions = attrib.dimensions;
+		this.name = attrib.name,
+		this.dimensions = attrib.dimensions;
 	}
 
 	destroy() {
@@ -65,13 +65,13 @@ class Humanoid extends CharacterStats {
 	constructor(attrib) {
 		super(attrib);
 		this.team = attrib.team,
-			this.weapons = attrib.weapons,
-			this.language = attrib.language;
+		this.weapons = attrib.weapons,
+		this.language = attrib.language;
 	}
 	greet() {
 		return `${this.name} offers a greeting in ${this.language}.`;
 	}
-}
+};
 
 /*
  * Inheritance chain: GameObject -> CharacterStats -> Humanoid

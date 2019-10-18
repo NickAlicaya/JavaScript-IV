@@ -2,8 +2,8 @@
 class Person {
 	constructor(attrib) {
 		this.name = attrib.name,
-			this.location = attrib.location,
-			this.age = attrib.age
+		this.location = attrib.location,
+		this.age = attrib.age
 	}
 	speak() {
 		console.log(`Hello my name is ${this.name}, I am from ${this.location}.`);
@@ -13,17 +13,16 @@ class Instructor extends Person {
 	constructor(attrib) {
 		super(attrib);
 		this.specialty = attrib.specialty,
-			this.favLanguage = attrib.favLanguage,
-			this.catchPhrase = attrib.catchPhrase
-		// this.student = attrib.student,
-		// this.subject = attrib.subject;
+		this.favLanguage = attrib.favLanguage,
+		this.catchPhrase = attrib.catchPhrase
+	
 	}
 	demo(subject) {
 		return `Today we are learning about ${subject}.`;
 	}
-	grade(student, subject) {
+	grade( student,subject) {
 		return (`${student.name} receives a perfect score on ${subject}.`);
-		//Need to clarify student object
+	
 	}
 }
 
@@ -31,28 +30,28 @@ class Student extends Person {
 	constructor(attrib) {
 		super(attrib);
 		this.previousBackground = attrib.previousBackground,
-			this.className = attrib.className,
-			this.favSubjects = attrib.favSubjects; //looks like an array or list
-		this.subject = attrib.subject;
+		this.className = attrib.className,
+		this.favSubjects = attrib.favSubjects
+		
 	}
 	listsSubjects() {
-		this.favSubjects.forEach(subject => {
-			return console.log(subject);
+		this.favSubjects.forEach(subjects => {
+			return console.log(subjects);
 		});
 	}
 
-	PRAssignment() {
-		return `${this.name} has submitted a PR for ${this.subject}`;
+	PRAssignment(subject) {
+		return `${this.name} has submitted a PR for ${subject}.`
 	}
-	sprintChallenge() {
-		return `${this.name} has begun sprint challenge on ${this.subject}.`;
+	sprintChallenge(subject) {
+		return `${this.name} has begun sprint challenge on ${subject}.`;
 	}
 }
 class ProjectManager extends Instructor {
 	constructor(attrib) {
 		super(attrib);
 		this.gradClassName = attrib.gradClassName,
-			this.favInstructor = attrib.gradClassName;
+		this.favInstructor = attrib.gradClassName;
 	}
 	standUp(channel) {
 		return `${this.name} announces to ${channel} @channel standby times!`;
@@ -79,10 +78,8 @@ const instructorOne = new Instructor({
 	age: 37,
 	specialty: "Front-end",
 	favLanguage: "JavaScript",
-	catchPhrase: "Dont forget the homies",
-	// student: "James",
-	// subject: "HTML"
-});
+	catchPhrase: "Dont forget the homies"
+	});
 
 const instructorTwo = new Instructor({
 	name: "Harry",
@@ -90,10 +87,8 @@ const instructorTwo = new Instructor({
 	age: 40,
 	specialty: "Back-end",
 	favLanguage: "HTML",
-	catchPhrase: "You got this!",
-	// student: "John",
-	// subject: "CSS"
-});
+	catchPhrase: "You got this!"
+	});
 
 const studentOne = new Student({
 	name: "Barney",
@@ -140,8 +135,10 @@ const projManagerTwo = new ProjectManager({
 
 console.log(personOne.name);
 console.log(personOne.speak());
-console.log(instructorOne.demo());
-console.log(instructorOne.grade(studentOne, 'HTML'));
-// console.log(studentOne.listsSubjects());
+console.log(instructorOne.demo('JAVA'));
+console.log(instructorOne.grade(studentTwo, 'Python'));
+console.log(studentTwo.listsSubjects());
+console.log(studentOne.PRAssignment('HTML'));
+console.log(studentOne.sprintChallenge('JavaScript'))
 console.log(projManagerOne.standUp('channel'))
 console.log(projManagerTwo.debugsCode('Nicky', 'Java'))
